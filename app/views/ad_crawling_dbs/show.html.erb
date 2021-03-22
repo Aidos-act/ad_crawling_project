@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ad_crawling_db.title %>
+</p>
+
+<p>
+  <strong>Ad url:</strong>
+  <%= @ad_crawling_db.ad_url %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @ad_crawling_db.company_name %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @ad_crawling_db.img_url %>
+</p>
+
+<p>
+  <strong>Web url:</strong>
+  <%= @ad_crawling_db.web_url %>
+</p>
+
+<%= link_to 'Edit', edit_ad_crawling_db_path(@ad_crawling_db) %> |
+<%= link_to 'Back', ad_crawling_dbs_path %>

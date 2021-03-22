@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<table class="content_per">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Imglink</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ad_crawling_dbs.each do |content| %>
+      <tr>
+        <td class="table_num"> <%= content.id %></td>
+        <td class="table_left"><%= link_to content.title, "#{content.ad_url}" %></td>
+        <td class="table_center"><a href="<%= content.ad_url %>">Link</a></td>
+        <td class="table_right"><img class="img_table" src="<%= content.img_url %>"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<script type="text/javascript">
+  setInterval("my_function();",900000); 
+ 
+    function my_function(){
+        window.location.href = "/";
+    }
+</script>
+
+<br>
+
+

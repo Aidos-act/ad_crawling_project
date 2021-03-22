@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BulletinTraining</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "AdForFullout" , root_path, class:'navbar-brand'%>
+
+        </div>
+
+        <ul class="nav navbar-nav">
+
+            <li> <%= link_to "Search", root_path %></li>
+            <li> <%= link_to "Categories", root_path %></li>
+        <div class="navbar-user navbar-right">
+            <div class="navbar-text nvabar">
+
+              <p> Current User </p>
+              
+            </div>
+            <div class="navbar-right navbar-btn navbar-log" >
+                  <li> <%= link_to "Log in", root_path %> </li>
+                  <li> <%= link_to "Sign Up", root_path %></li>
+            </div>
+        </div>
+        </ul>
+
+      </div>
+    </div>
+    <div class="container">
+      <p class="notice"><%= flash.now[notice] %></p>
+      <p class="alert"><%= flash.now[alert] %></p>
+      <div class="crawl-btn">
+        <p>
+          <%= form_tag root_path, :method => 'get' do %>
+              <label for="search_range">How many Reloads will we use? </label>
+              <input type="number" name="search_range" id="search_range" value="" size="40"/>
+              <input type="submit" name="commit" value="Search"/> 
+           <% end %>
+        </p>
+      </div>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+
+
+
+    </div>  
+  </body>
+</html>
+
